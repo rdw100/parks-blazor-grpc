@@ -1,0 +1,13 @@
+﻿{
+  "profiles": {
+    "Fsp.Grpc.Server": {
+      "commandName": "Project",
+      "dotnetRunMessages": true,
+      "launchBrowser": false,
+      "applicationUrl": "http://localhost:5217;https://localhost:7217",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}
