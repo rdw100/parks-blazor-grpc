@@ -5,7 +5,7 @@ VisualStudioVersion = 17.0.31912.275
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fsp.Grpc.Server", "Fsp.Grpc.server\Fsp.Grpc.Server.csproj", "{C0871D0F-1710-4FED-AA28-4B8E7E76F47C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fsp.Grpc.Client", "Fsp.Grpc.Client\Fsp.Grpc.Client.csproj", "{C5D79A4D-1CC9-427A-862C-07DB8D0C20AA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fsp.Cnsl.Client", "Fsp.Grpc.Client\Fsp.Cnsl.Client.csproj", "{C5D79A4D-1CC9-427A-862C-07DB8D0C20AA}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fsp.Blazor.Client", "Fsp.Blazor.Client\Fsp.Blazor.Client.csproj", "{19720E23-965D-430C-83CE-0584EACF2BD7}"
 EndProject
@@ -13,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fsp.Wasm.Client", "Fsp.Wasm
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fsp.Pwa.Client", "Fsp.Pwa.Client\Fsp.Pwa.Client.csproj", "{D11E157D-D29E-4D2C-8DF0-B8F9848C08FA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fsp.Grpc.Shared", "Fsp.Grpc.Shared\Fsp.Grpc.Shared.csproj", "{60F9B90A-D8E1-4064-9492-B45A5E5A84CE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fsp.Grpc.Shared", "Fsp.Grpc.Shared\Fsp.Grpc.Shared.csproj", "{60F9B90A-D8E1-4064-9492-B45A5E5A84CE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
