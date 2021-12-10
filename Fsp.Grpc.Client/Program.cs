@@ -1,6 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using Grpc.Net.Client;
-using Fsp.Grpc.Client;
+using Fsp.Grpc.Api;
 
 // The port number must match the port of the gRPC server.
 using var channel = GrpcChannel.ForAddress("https://localhost:7217");

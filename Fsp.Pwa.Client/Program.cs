@@ -1,5 +1,5 @@
 using Fsp.Pwa.Client;
-using PwaClient;
+using Fsp.Grpc.Api;
 using Grpc.Net.Client;
 using Grpc.Net.Client.Web;
 using Microsoft.AspNetCore.Components;

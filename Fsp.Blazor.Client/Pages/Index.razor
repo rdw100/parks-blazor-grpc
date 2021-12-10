@@ -1,25 +1,25 @@
 ﻿@page "/"
+@using Fsp.Blazor.Client
+@using Fsp.Grpc.Api
+@inject Greeter.GreeterClient GreeterClient
 
-<h1>Hello, gRPC!</h1>
+<h1>Invoke gRPC service</h1>
 
-<button class="btn btn-primary" @onclick="SayHello">Say Hello</button>
+<p>
+    <input @bind="yourName" placeholder="Type your name" />
+    <button @onclick="GetGreeting" class="btn btn-primary">Call gRPC service</button>
+</p>
 
-<hr />
-
-<p>@Greeting</p>
+Server response: <strong>@serverResponse</strong>
 
 @code {
+    string yourName = String.Empty;
+    string serverResponse = String.Empty;
 
-    private string Greeting = String.Empty;
-
-    async Task SayHello()
+    async Task GetGreeting()
     {
-        using var channel = GrpcChannel.ForAddress("https://localhost:7217");
-        var client = new Greeter.GreeterClient(channel);
-        var reply = await client.SayHelloAsync(new HelloRequest { Name = "Blazor gRPC Client" });
-        Greeting = reply.Message;
-
-        await channel.ShutdownAsync();
+        var request = new HelloRequest { Name = yourName };
+        var reply = await GreeterClient.SayHelloAsync(request);
+        serverResponse = reply.Message;
     }
-
 }

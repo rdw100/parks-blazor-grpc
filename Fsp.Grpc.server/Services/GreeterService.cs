@@ -1,6 +1,6 @@
 using Grpc.Core;
 
-namespace Fsp.Grpc.Server.Services
+namespace Fsp.Grpc.Api.Services
 {
     public class GreeterService : Greeter.GreeterBase
     {

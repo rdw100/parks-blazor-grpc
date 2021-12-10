@@ -1,4 +1,7 @@
 using Fsp.Blazor.Client.Data;
+using Fsp.Grpc.Api;
+using Grpc.Net.Client;
+using Grpc.Net.Client.Web;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -6,6 +9,20 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
 builder.Services.AddSingleton<WeatherForecastService>();
+
+//Add gRPC service
+builder.Services.AddSingleton(services =>
+{
+    // Grpc Service URI
+    var backendUrl = "https://localhost:7217";
+
+    // Create a gRPC-Web channel pointing to the backend server
+    var httpClient = new HttpClient(new GrpcWebHandler(GrpcWebMode.GrpcWeb, new HttpClientHandler()));
+    var channel = GrpcChannel.ForAddress(backendUrl, new GrpcChannelOptions { HttpClient = httpClient });
+
+    // Now we can instantiate gRPC clients for this channel
+    return new Greeter.GreeterClient(channel);
+});
 
 var app = builder.Build();
 
