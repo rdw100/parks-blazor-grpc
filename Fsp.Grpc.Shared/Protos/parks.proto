@@ -1,0 +1,28 @@
+﻿syntax = "proto3";
+
+option csharp_namespace = "Fsp.Grpc.Api";
+
+package Parks;
+
+service Parks{
+	rpc GetParks(ParksRequest) 
+		returns (ParksResponse);
+}
+
+message ParksRequest{
+	int32 id = 1;
+}
+
+message ParksResponse{
+	Park myParks = 1;
+}
+
+message Park {
+	int32 id = 1;
+	string name = 2;
+	string county = 3;
+	string size = 4;
+	string year = 5;
+	string water = 6;
+	string remarks = 7;
+}
