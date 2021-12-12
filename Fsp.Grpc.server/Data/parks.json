@@ -1,0 +1,29 @@
+﻿[
+  {
+    "ID" : 1,
+    "Name": "Addison Blockhouse Historic State Park",
+    "County": "Volusia",
+    "Size": "134.51 acres (54.43 ha)",
+    "Year": "1939",
+    "Water": "Tomoka River",
+    "Remarks": "Ruins of a 19th-century plantation owned by John Addison"
+  },
+  {
+    "ID": 2,
+    "Name": "Alafia River State Park",
+    "County": "Hillsborough",
+    "Size": "6,312 acres (2,556 ha)",
+    "Year": "1996",
+    "Water": "Alafia River",
+    "Remarks": "Former phosphorus strip mine unremediated"
+  },
+  {
+    "ID": 3,
+    "Name": "Alfred B. Maclay Gardens State Park",
+    "County": "Leon",
+    "Size": "1,180 acres, (478ha)",
+    "Year": "1954",
+    "Water": "Lake Hall",
+    "Remarks": "Originally named Killearn Gardens State Park"
+  }
+]

@@ -24,6 +24,21 @@ builder.Services.AddSingleton(services =>
     return new Greeter.GreeterClient(channel);
 });
 
+//Add gRPC service
+builder.Services.AddSingleton(services =>
+{
+    // Get the service address from appsettings.json
+    //var config = services.GetRequiredService<IConfiguration>();
+    var backendUrl = "https://localhost:7217";
+
+    // Create a gRPC-Web channel pointing to the backend server
+    var httpClient = new HttpClient(new GrpcWebHandler(GrpcWebMode.GrpcWeb, new HttpClientHandler()));
+    var channel = GrpcChannel.ForAddress(backendUrl, new GrpcChannelOptions { HttpClient = httpClient });
+
+    // Now we can instantiate gRPC clients for this channel
+    return new Visitor.VisitorClient(channel);
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

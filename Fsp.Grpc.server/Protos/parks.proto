@@ -4,21 +4,21 @@ option csharp_namespace = "Fsp.Grpc.Api";
 
 package parks;
 
-service Parks{
+service Visitor{
 	rpc GetParks(ParksRequest) 
 		returns (ParksResponse);
 }
 
 message ParksRequest{
-	int32 id = 1;
+	//int32 id = 1;
 }
 
 message ParksResponse{
-	repeated Park myParks = 1;
+	repeated Park parks = 1;
 }
 
 message Park {
-	int32 id = 1;
+	int64 id = 1;
 	string name = 2;
 	string county = 3;
 	string size = 4;
