@@ -13,7 +13,7 @@ builder.Services.AddSingleton<WeatherForecastService>();
 //Add gRPC service
 builder.Services.AddSingleton(services =>
 {
-    // Grpc Service URI
+    // Grpc Service URI (normally, appsettings.json)
     var backendUrl = "https://localhost:7217";
 
     // Create a gRPC-Web channel pointing to the backend server
@@ -27,8 +27,7 @@ builder.Services.AddSingleton(services =>
 //Add gRPC service
 builder.Services.AddSingleton(services =>
 {
-    // Get the service address from appsettings.json
-    //var config = services.GetRequiredService<IConfiguration>();
+    // Grpc Service URI (normally, appsettings.json)
     var backendUrl = "https://localhost:7217";
 
     // Create a gRPC-Web channel pointing to the backend server
