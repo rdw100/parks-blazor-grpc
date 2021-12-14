@@ -4,4 +4,4 @@ Version 17.1.0 with .NET 6.  The objective is to demonstrate Blazor Server, Blaz
 
 ## Demo
 The animated gif below demonstrates project execution.
-![Recordit GIF](https://github.com/rdw100/parks-blazor-grpc/Fsp.Grpc.Client/img/u245K6OWdO.gif?raw=true)
+![Recordit GIF](https://github.com/rdw100/parks-blazor-grpc/blob/master/Fsp.Grpc.Client/img/u245K6OWdO.gif?raw=true)
