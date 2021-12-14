@@ -1,0 +1,50 @@
+﻿@page "/parks"
+@using Fsp.Grpc.Api
+@inject Visitor.VisitorClient VisitorClient
+<h3>Florida State Parks</h3>
+
+@if (parks == null)
+{
+    <p><em>Loading Parks ...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>NAME</th>
+                <th>COUNTY</th>
+                <th>SIZE</th>
+                <th>YEAR</th>
+                <th>WATER</th>
+                <th>REMARKS</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var parkItem in parks)
+            {
+                <tr>
+                    <td>@parkItem.Id</td>
+                    <td>@parkItem.Name</td>
+                    <td>@parkItem.County</td>
+                    <td>@parkItem.Size</td>
+                    <td>@parkItem.Year</td>
+                    <td>@parkItem.Water</td>
+                    <td>@parkItem.Remarks</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private IList<Park> parks;
+
+    protected override async Task OnInitializedAsync()
+    {
+        ParksRequest parksRequest = new ParksRequest();
+        ParksResponse response = await VisitorClient.GetParksAsync(parksRequest);
+        parks = response.Parks;
+    }
+}
